@@ -13,5 +13,5 @@ vendor/
 # Laravel sensitive files
 .env
 storage/
-/bootstrap/cache/*.php
+/bootstrap/cache/*
 !/bootstrap/cache/.gitignore
