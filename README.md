@@ -180,6 +180,9 @@ docker compose up -d --build
 ```bash
 docker compose exec php bash
 
+# 依存パッケージのインストール前に必要なディレクトリを作成
+mkdir -p storage/framework/{cache,sessions,views}
+
 # 依存パッケージのインストール
 composer install
 
