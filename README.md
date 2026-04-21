@@ -203,9 +203,9 @@ php artisan storage:link
 
 - PHP 8.2（Docker）
 - Laravel 8.83.29
-- MySQL 8.0.45（Docker）
-- nginx 1.29.8（Docker）
-- Docker / docker-compose
+- MySQL 8.0.26（Docker）
+- nginx 1.21.1（Docker）
+- Docker / Docker Compose v5.0.1
 
 ---
 
