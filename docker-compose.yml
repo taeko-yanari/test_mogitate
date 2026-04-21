@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: ./docker/php
+    container_name: mogitate-php
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - mysql
+
+  nginx:
+    image: nginx:latest
+    container_name: mogitate-nginx
+    ports:
+      - '80:80'
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+  mysql:
+    image: mysql:8.0
+    container_name: mogitate-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mogitate
+      MYSQL_USER: mogitate
+      MYSQL_PASSWORD: mogitate
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: mogitate-phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: mogitate
+      PMA_PASSWORD: mogitate
+    ports:
+      - '8080:80'
+    depends_on:
+      - mysql
