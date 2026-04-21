@@ -188,7 +188,7 @@ cp .env.example .env
 php artisan key:generate
 
 # 書き込み権限を付与
-chmod -R 775 storage bootstrap/cache
+chmod -R 777 storage bootstrap/cache
 
 # DB 初期化（migrate + seeder）
 php artisan migrate --seed
