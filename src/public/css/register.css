@@ -1,0 +1,177 @@
+.product-register {
+    min-height: 100vh;
+    padding: 50px 4%;
+}
+
+.product-register__section {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.register-form__field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.register-form__label {
+    margin-bottom: 20px;
+}
+
+.required {
+    background: #fd2724;
+    color: #fff;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.product-create__note {
+    font-size: 0.75rem;
+    color: #fd2724;
+    margin-left: 10px;
+}
+
+.register-form__input {
+    color: #4f4f4f;
+    width: 100%;
+    height: 42px;
+    padding: 5px 10px;
+}
+
+.register-form__textarea {
+    color: #4f4f4f;
+    padding: 20px 10px;
+}
+
+.register-form__input,
+.register-form__textarea {
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    font-size: 1.03rem;
+}
+
+/* 季節 */
+.register-form__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.register-form__checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.register-form__checkbox-input {
+    display: none;
+}
+
+.check-mark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #959595;
+    border-radius: 50%;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+}
+
+.register-form__checkbox-input:checked + .check-mark {
+    background-color: #5e5e5e;
+    border-color: #5e5e5e;
+}
+
+.register-form__checkbox-input:checked + .check-mark:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* 商品画像 */
+.product-register__file-input {
+    display: none;
+}
+
+.product-register__file-btn {
+    display: inline-block;
+    width: 130px;
+    padding: 8px 16px;
+    background: #e0dfde;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.84rem;
+    text-align: center;
+}
+
+.product-register__image-wrap {
+    margin-top: 10px;
+}
+
+.product-register__image {
+    width: 240px;
+    height: auto;
+    display: block;
+    margin-bottom: 6px;
+    border-radius: 0;
+}
+
+.product-register__file {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-register__file-name {
+    font-size: 14px;
+    color: #333;
+}
+
+/* ボタン */
+.register-form__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.register-form__back-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e0dfde;
+    box-shadow: 0 3px 6px #dedddd;
+    border-radius: 5px;
+    width: 140px;
+    height: 40px;
+}
+
+.register-form__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5c800;
+    box-shadow: 0 3px 6px #dedddd;
+    border-radius: 5px;
+    width: 140px;
+    height: 40px;
+    border: none;
+}
+
+.error-messages {
+    color: #fd2724;
+    font-size: 0.87rem;
+}

@@ -26,14 +26,16 @@ EC サイトの基礎となる機能を実装しています。
 
 ## 🗂 画面設計（URL 設計）
 
-| 画面     | URL                            | HTTP | 説明                     |
-| -------- | ------------------------------ | ---- | ------------------------ |
-| 商品一覧 | `/products`                    | GET  | 商品一覧・検索・並び替え |
-| 商品詳細 | `/products/detail/{productId}` | GET  | 商品詳細ページ           |
-| 商品更新 | `/products/{productId}/update` | GET  | 商品編集フォーム         |
-| 商品登録 | `/products/register`           | GET  | 商品登録フォーム         |
-| 検索     | `/products/search`             | GET  | 商品名検索・並び替え     |
-| 商品削除 | `/products/{productId}/delete` | POST | 商品削除処理             |
+| 画面             | URL                   | 正しい HTTP | 理由                       |
+| ---------------- | --------------------- | ----------- | -------------------------- |
+| 商品一覧         | /products             | **GET**     | 一覧表示（副作用なし）     |
+| 商品詳細         | /products/detail/{id} | **GET**     | 詳細表示（副作用なし）     |
+| 商品更新フォーム | /products/{id}/update | **GET**     | 編集画面の表示は GET       |
+| 商品更新処理     | /products/{id}/update | **PUT**     | 更新処理は PUT             |
+| 商品登録フォーム | /products/register    | **GET**     | フォーム表示は GET         |
+| 商品登録処理     | /products/store       | **POST**    | 新規作成は POST            |
+| 検索             | /products/search      | **GET**     | 検索は副作用なしなので GET |
+| 商品削除         | /products/{id}/delete | **DELETE**  | 削除は DELETE              |
 
 ---
 
@@ -214,7 +216,7 @@ php artisan storage:link
 
 ## 🌐 URL
 
-- 商品一覧：http://localhost/
+- 商品一覧：http://localhost/products/
 - phpMyAdmin：http://localhost:8080/
 
 ---
