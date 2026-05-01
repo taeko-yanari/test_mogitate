@@ -82,7 +82,7 @@
             <div class="edit-form__checkbox">
               @foreach ($seasons as $season)
               <label for="season_{{ $season->id }}" class="edit-form__checkbox-label">
-                <input type="checkbox" name="season_ids[]" id="season_{{ $season->id }}" value="{{ $season->id }}" class="edit-form__checkbox-input" {{ in_array((string)$season->id, array_map('strval', old('season_ids', $product->seasons->pluck('id')->toArray()))) ? 'checked' : '' }}><span class="check-mark"></span>{{ $season->name }}
+                <input type="checkbox" name="season_ids[]" id="season_{{ $season->id }}" value="{{ $season->id }}" class="edit-form__checkbox-input" {{ in_array((string)$season->id,array_map('strval', $errors->any() ? (old('season_ids') ?? []) : $product->seasons->pluck('id')->toArray())) ? 'checked' : '' }}><span class="check-mark"></span>{{ $season->name }}
               </label>
               @endforeach
             </div>
